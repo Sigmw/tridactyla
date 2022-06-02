@@ -4,12 +4,12 @@
 #define BUFFER 0xb8000
 
 void write(char* buf, int color) {
-  char* mem = (BUFFER);
+  char* mem = (char*)(BUFFER);
   while(*buf != 0) {
     *mem = *buf;
     mem++;
     buf++;
-    *mem = (char*)color;
+    *mem = color;
     mem++;
   }
 }
